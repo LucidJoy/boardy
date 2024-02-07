@@ -15,6 +15,7 @@ import type {
   FunctionReference,
 } from "convex/server";
 import type * as board from "../board.js";
+import type * as boards from "../boards.js";
 import type * as schema from "../schema.js";
 
 /**
@@ -27,6 +28,7 @@ import type * as schema from "../schema.js";
  */
 declare const fullApi: ApiFromModules<{
   board: typeof board;
+  boards: typeof boards;
   schema: typeof schema;
 }>;
 export declare const api: FilterApi<

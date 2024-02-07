@@ -1,15 +1,13 @@
 "use client";
 
 import React from "react";
-import { useMutation } from "convex/react";
 import Image from "next/image";
+import { toast } from "sonner";
+import { useOrganization } from "@clerk/nextjs";
 
 import { api } from "@/convex/_generated/api";
 import { Button } from "@/components/ui/button";
-import { Coins } from "lucide-react";
-import { useOrganization } from "@clerk/nextjs";
 import { useApiMutation } from "@/hooks/useApiMutation";
-import { toast } from "sonner";
 
 const EmptyBoards = () => {
   const { organization } = useOrganization();
