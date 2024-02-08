@@ -13,6 +13,9 @@ import NewBoardButton from "./NewBoardButton";
 const BoardList = ({ orgId, query }) => {
   const data = useQuery(api.boards.get, { orgId });
 
+  console.log("DATA ", data);
+  // make isfav falses initially
+
   if (data === undefined) {
     return (
       <div>
@@ -62,7 +65,7 @@ const BoardList = ({ orgId, query }) => {
             authorName={board.authorName}
             createdAt={board._creationTime}
             orgId={board.orgId}
-            isFavorite={false}
+            isFavorite={board.isFavorite}
           />
         ))}
       </div>
