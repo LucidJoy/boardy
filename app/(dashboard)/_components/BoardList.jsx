@@ -11,7 +11,7 @@ import BoardCard from "./boardcard";
 import NewBoardButton from "./NewBoardButton";
 
 const BoardList = ({ orgId, query }) => {
-  const data = useQuery(api.boards.get, { orgId });
+  const data = useQuery(api.boards.get, { orgId, ...query });
 
   console.log("DATA ", data);
   // make isfav falses initially
