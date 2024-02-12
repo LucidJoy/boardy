@@ -84,7 +84,7 @@ const Toolbar = ({
           label='Pen'
           icon={Pencil}
           onClick={() => setCanvasState({ mode: "pencil" })}
-          isActive={canvasState.mode === "pencil"}
+          isActive={canvasState.mode === "Pencil"}
         />
       </div>
 
