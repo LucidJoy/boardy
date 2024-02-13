@@ -1,3 +1,4 @@
+import { colorToCss } from "@/lib/utils";
 import React from "react";
 
 const Rectangle = ({ id, layer, onPointerDown, selectionColor }) => {
@@ -17,8 +18,8 @@ const Rectangle = ({ id, layer, onPointerDown, selectionColor }) => {
       width={width}
       height={height}
       strokeWidth={1}
-      fill='#000'
-      stroke='transparent'
+      fill={fill ? colorToCss(fill) : "#000"}
+      stroke={selectionColor || "transparent"}
     />
   );
 };
