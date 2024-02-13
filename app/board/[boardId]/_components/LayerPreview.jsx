@@ -7,7 +7,7 @@ import Rectangle from "./Rectangle";
 const LayerPreview = memo(({ id, onLayerPointerDown, selectionColor }) => {
   const layer = useStorage((root) => root.layers.get(id));
 
-  console.log({ layer });
+  // console.log({ layer });
 
   if (!layer) return null;
 

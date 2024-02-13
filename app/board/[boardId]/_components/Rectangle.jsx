@@ -2,7 +2,7 @@ import { colorToCss } from "@/lib/utils";
 import React from "react";
 
 const Rectangle = ({ id, layer, onPointerDown, selectionColor }) => {
-  console.log({ id, layer });
+  // console.log({ id, layer });
 
   const { x, y, width, height, fill } = layer;
 
