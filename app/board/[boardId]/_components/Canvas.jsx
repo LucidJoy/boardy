@@ -19,6 +19,7 @@ import {
 import CursorsPresence from "./CursorsPresence";
 import { connectionIdToColor, pointerEventToCanvasPoint } from "@/lib/utils";
 import LayerPreview from "./LayerPreview";
+import SelectionBox from "./SelectionBox";
 
 const MAX_LAYERS = 100;
 
@@ -117,7 +118,7 @@ const Canvas = ({ boardId }) => {
       if (!self.presence.selection.includes(layerId)) {
         setMyPresence({ selection: [layerId] }, { addToHistory: true });
       }
-      // FIXME
+
       setCanvasState({ mode: "translating", current: point });
     },
     [setCanvasState, camera, history, canvasState.mode]
@@ -168,6 +169,8 @@ const Canvas = ({ boardId }) => {
               selectionColor={layerIdsToColorSelection[layerId]}
             />
           ))}
+
+          <SelectionBox onResizeHandlePointerDown={() => {}} />
           <CursorsPresence />
         </g>
       </svg>
