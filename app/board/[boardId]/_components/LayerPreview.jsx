@@ -3,6 +3,9 @@
 import { useStorage } from "@/liveblocks.config";
 import React, { memo } from "react";
 import Rectangle from "./Rectangle";
+import Ellipse from "./Ellipse";
+import Text from "./Text";
+import Note from "./Note";
 
 const LayerPreview = memo(({ id, onLayerPointerDown, selectionColor }) => {
   const layer = useStorage((root) => root.layers.get(id));
@@ -12,6 +15,36 @@ const LayerPreview = memo(({ id, onLayerPointerDown, selectionColor }) => {
   if (!layer) return null;
 
   switch (layer.type) {
+    case "Note":
+      return (
+        <Note
+          id={id}
+          layer={layer}
+          onPointerDown={onLayerPointerDown}
+          selectionColor={selectionColor}
+        />
+      );
+
+    case "Text":
+      return (
+        <Text
+          id={id}
+          layer={layer}
+          onPointerDown={onLayerPointerDown}
+          selectionColor={selectionColor}
+        />
+      );
+
+    case "Ellipse":
+      return (
+        <Ellipse
+          id={id}
+          layer={layer}
+          onPointerDown={onLayerPointerDown}
+          selectionColor={selectionColor}
+        />
+      );
+
     case "Rectangle":
       return (
         <Rectangle
