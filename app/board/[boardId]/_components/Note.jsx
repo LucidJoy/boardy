@@ -46,7 +46,7 @@ const Note = ({ id, layer, onPointerDown, selectionColor }) => {
       className='shadow-md drop-shadow-xl'
     >
       <ContentEditable
-        html={value || "NOte"}
+        html={value || "Note"}
         onChange={handleContentChange}
         className={cn(
           "h-full w-full flex items-center justify-center text-center outline-none",

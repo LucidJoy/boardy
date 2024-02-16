@@ -10,7 +10,12 @@ const Room = ({ children, roomId, fallback }) => {
   return (
     <RoomProvider
       id={roomId}
-      initialPresence={{ cursor: null, selection: [] }}
+      initialPresence={{
+        cursor: null,
+        selection: [],
+        pencilDraft: null,
+        penColor: null,
+      }}
       initialStorage={{
         layers: new LiveMap(),
         layerIds: new LiveList(),
